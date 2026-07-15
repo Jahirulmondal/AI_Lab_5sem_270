@@ -29,3 +29,15 @@ son(Child,Par):-
 daughter(Child,Par):-
     female(Child),
     parent(Par,Child).
+father(Par,Child):-
+    male(Par),
+    parent(Par,Child).
+
+mother(Par,Child):-
+    female(Par),
+    parent(Par,Child).
+
+sibling(X,Y):-
+    parent(Par,X),
+    parent(Par,Y),
+    X \= Y.
